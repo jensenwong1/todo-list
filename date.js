@@ -1,5 +1,6 @@
 
-console.log(module);
+module.exports=getDate;
+
 
 function getDate(){
 var today = new Date();
