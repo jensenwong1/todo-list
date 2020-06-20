@@ -1,25 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css">
-    <title>TO Do List</title>
-  </head>
-<h1><%=kindOfDay%></h1>
 
+<%- include("header")-%>
 
-<ul>
+<div class="box" id="heading">
+<h1><%= listTitle %></h1>
+</div>
+
+<div class="box">
+
  <% for (var i=0; i<newListItems.length; i++) { %>
-<li> <%= newListItems[i] %> </li>
+  <div class="item">
+    <input type="checkbox">
+ <p> <%= newListItems[i] %> </p>
+ </div>
 <% } %>
 
-</ul>
 
-<form class="" action="/" method="post">
-<input type="text" name="newItem">
-<button action="submit" name="button">Add New Item</button>
+<form class="item" action="/" method="post">
+<input type="text" name="newItem" placeholder="New item" autocomplete="off">
+<button action="submit" name="list" value= <%= listTitle %> >+</button>
 </form>
-
-  </body>
-</html>
+</div>
+<%- include("footer")-%>
